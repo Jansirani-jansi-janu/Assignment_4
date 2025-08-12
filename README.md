@@ -42,3 +42,25 @@ The project includes:
 
 ## 🛠 Requirements
 Install dependencies before running:
+pip install pandas scikit-learn streamlit matplotlib joblib
+
+- Trains the classifier
+- Saves model to `voice_classifier.pkl`
+
+### 2. Launch the Streamlit App
+Run:
+- Opens app in your browser
+- Upload CSV with the same feature columns used for training
+
+---
+
+## 📊 Dataset Format
+CSV must have:
+- **Features**: numerical columns (e.g., meanfreq, sd, median, Q25, Q75, etc.)
+- **Label**: 'label' column with values `male` or `female` (only for training/testing)
+
+Example:
+meanfreq,sd,median,Q25,Q75,label
+0.059781,0.064241,0.056286,0.031302,0.082253,male
+0.066009,0.067420,0.068275,0.043109,0.089885,female
+
