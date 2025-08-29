@@ -5,6 +5,18 @@
 This project classifies human voices as **Male** or **Female** using a machine learning model (Random Forest Classifier) 
 and also provides an option to perform **unsupervised clustering** (K-Means) on voice features.
 
+🎤 Human Voice Classification and Clustering
+
+This project classifies human voices as Male or Female using Machine Learning and also performs clustering to find natural groupings in the data. A Streamlit web app is built for interactive use.
+
+📌 Features
+
+Upload a CSV file with voice acoustic features
+Data Preview: See uploaded data
+Model Evaluation: Accuracy, Confusion Matrix, Metrics
+Predictions: View actual vs predicted results
+Clustering: Group voices using KMeans
+
 The project includes:
 1. **Classification** – Supervised ML model to predict gender from voice features.
 2. **Clustering** – Grouping similar voices without labels.
@@ -54,10 +66,35 @@ Run:
 
 ---
 
-## 📊 Dataset Format
-CSV must have:
-- **Features**: numerical columns (e.g., meanfreq, sd, median, Q25, Q75, etc.)
-- **Label**: 'label' column with values `male` or `female` (only for training/testing)
+## 📊 Dataset
+
+Contains acoustic features of voice samples (43 features).
+Labels: Male (0), Female (1).
+Example features:
+Mean Spectral Centroid
+Spectral Bandwidth
+Zero Crossing Rate
+Roll-off frequencies
+
+⚙️ Preprocessing
+Data Cleaning (remove missing values)
+Standardization using StandardScaler
+Train-Test Split (80% – 20%)
+(Optional) Dimensionality Reduction (PCA)
+
+🤖 Models Used
+Random Forest Classifier (Supervised)
+Accuracy: ~99.5%
+Confusion Matrix shows very few misclassifications
+KMeans Clustering (Unsupervised)
+k = 2 (Male / Female)
+Evaluated using Silhouette Score (~0.87)
+
+🖥️ Streamlit App
+The app has 3 main sections:
+📂 Data Preview – view uploaded dataset
+📊 Model Evaluation – accuracy & confusion matrix
+🔮 Predictions – actual vs predicted labels
 
 Example:
 meanfreq,sd,median,Q25,Q75,label
